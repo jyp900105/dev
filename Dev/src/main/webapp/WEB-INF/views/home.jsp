@@ -12,8 +12,10 @@
 
 <P>  The time on the server is !!!</P>
 
-${msg }
+${msg }<br>
 
-<a href = "moveRegUser"> Join Us</a>
+
+<a href = "moveLogin">Login</a><br><br>
+<a href = "moveRegUser">Join Us</a>
 </body>
 </html>

@@ -10,6 +10,7 @@ import kr.co.dev.user.service.UserService;
 @Controller
 public class UserController {
 	
+	
 	@Autowired
 	UserService service;
 	
@@ -17,6 +18,17 @@ public class UserController {
 	public String init() {
 		
 		return "home";
+	}
+	
+	@RequestMapping("/moveLogin")
+	public ModelAndView moveLogin() {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("login");
+		
+		return mv;
+		
 	}
 	
 	@RequestMapping("/moveRegUser")
@@ -38,4 +50,15 @@ public class UserController {
 		
 		return mv;
 	}
+	
+	@RequestMapping("/login")
+	public ModelAndView login(String id, String password) throws Exception {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv = service.login(id, password);
+		
+		return mv;
+	}
+	
 }
